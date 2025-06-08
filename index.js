@@ -7,8 +7,10 @@ dayjs.locale('es');
 
 const bot = new TelegramBot(process.env.TELEGRAM_TOKEN, { polling: true });
 
+const { google } = require('googleapis');
+
 const auth = new google.auth.GoogleAuth({
-  credentials: JSON.parse(process.env.GOOGLE_CREDENTIALS),
+  keyFile: 'credenciales.json',
   scopes: ['https://www.googleapis.com/auth/spreadsheets'],
 });
 
